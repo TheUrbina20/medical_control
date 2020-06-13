@@ -1,0 +1,14 @@
+{
+  "name": "medical-control",
+  "version": "1.0.0",
+  "main": "main.js",
+  "author": "Miguel Urbina",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^9.0.4"
+  }
+}
