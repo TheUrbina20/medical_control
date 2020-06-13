@@ -7,7 +7,7 @@ function createWindow () {
     height: 600,
   })
 
-  mainWindow.loadFile('index.html')
+  mainWindow.loadFile('./public/index.html')
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools()
