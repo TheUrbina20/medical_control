@@ -8,6 +8,12 @@ function main() {
   new Window({
     file: './public/sections/index.html',
   })
+
+  ipcMain.on('create-user', (event, data) => {
+    User.create(data).then((user) => {
+      console.log(user)
+    })
+  })
 }
 
 app.on('ready', main);
