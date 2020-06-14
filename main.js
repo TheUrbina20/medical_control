@@ -2,16 +2,15 @@
 
 const { app, ipcMain } = require('electron')
 const Window = require('./Window');
-const User = require('./src/User')
+const Patient = require('./src/Patient')
 
 function main() {
   new Window({
     file: './public/sections/index.html',
   })
 
-  ipcMain.on('create-user', (event, data) => {
-    User.create(data).then((user) => {
-      console.log(user)
+  ipcMain.on('create-patient', (event, data) => {
+    Patient.create(data).then((patient) => {
     })
   })
 }
