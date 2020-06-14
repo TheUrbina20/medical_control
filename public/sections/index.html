@@ -8,21 +8,157 @@
   </head>
   <body>
     <div class="container">
-      <div class="columns is-centered is-flex">
-        <div class="column is-8-mobile is-6-tablet">
-          <h1 class="title">New Patient!</h1>
+      <div class="columns is-flex is-centered">
+        <div class="column is-11-mobile is-10-tablet is-9-desktop mt-4">
+          <h1 class="title">Nuevo paciente</h1>
           <form id="createPatientForm" >
-            <div class="field">
-              <label class="label">Full Name</label>
-              <div class="control">
-                <input class="input" type="text" placeholder="e.g Alex Smith" name="fullName" required=required>
+            <div class="columns is-flex is-multiline">
+              <div class="column is-6 is-12-mobile">
+                <div class="field">
+                  <label class="label" for="fullName">Nombre</label>
+                  <div class="control">
+                    <input class="input" type="text" placeholder="Nombre completo" name="fullName" required=required minlength="10" maxlength="70">
+                  </div>
+                </div>
+                <div class="columns is-flex mb-0">
+                  <div class="column is-6">
+                    <div class="field">
+                      <label class="label" for="expedient">Expediente</label>
+                      <div class="control">
+                        <input class="input" type="text" name="expedient">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <label class="label" for="admisionDate">Fecha ing.</label>
+                      <div class="control">
+                        <input class="input" type="date" name="admisionDate" required=required>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="columns is-flex mb-0">
+                  <div class="column is-6">
+                    <div class="field">
+                      <label class="label" for="birthDate">F.Nacimiento</label>
+                      <div class="control">
+                        <input class="input" type="date" name="birthDate">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <label class="label" for="age">Edad</label>
+                      <div class="control">
+                        <input class="input" type="number" name="age" required=required min="1" max="100">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="columns is-flex mb-0">
+                  <div class="column is-6">
+                    <label class="label" for="sex">Sexo</label>
+                    <div class="select">
+                      <select name="sex" required=required>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <label class="label" for="marritalStatus">Estado civil</label>
+                    <div class="select">
+                      <select name="marritalStatus">
+                        <option value="N/A" disabled=disabled selected=selected>N/A</option>
+                        <option value="Casado">Casado</option>
+                        <option value="Divorciado">Divorciado</option>
+                        <option value="Sotero">Soltero</option>
+                        <option value="Unión libre">Unión libre</option>
+                        <option value="Viudo">Viudo</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
               </div>
-            </div>
-
-            <div class="field">
-              <label class="label">Email</label>
-              <div class="control">
-                <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com" name="email">
+              <div class="column is-6 is-12-mobile">
+                <div class="field">
+                  <label class="label" for="city">Ciudad</label>
+                  <div class="control">
+                    <input class="input" type="text" name="city" placeholder="Colima">
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="address">Domicilio</label>
+                  <div class="control">
+                    <input class="input" type="text" name="address" placeholder="Calle Gabino Barreda 269, Centro, 28000" minlength="10" maxlength="100">
+                  </div>
+                </div>
+                <div class="columns is-flex mb-0">
+                  <div class="column is-6">
+                    <div class="field">
+                      <label class="label" for="phone">Tel.</label>
+                      <div class="control">
+                        <input class="input" type="phone" name="phone" placeholder="(312)-314-6030" pattern="[0-9]{10}" maxlength="10" minlength="10">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <div class="field">
+                      <label class="label" for="cellPhone">Cel.</label>
+                      <div class="control">
+                        <input class="input" type="phone" name="cellPhone" placeholder="(312)-314-6030" pattern="[0-9]{10}" maxlength="10" minlength="10">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="activitites">Ocupaciones</label>
+                  <div class="control">
+                    <input class="input" type="text" name="activitites" placeholder="Deporte, danza, lectura...">
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="column is-6 is-12-mobile">
+                <div class="field">
+                  <label class="label" for="dxPrimary">Dx. Primario</label>
+                  <div class="control">
+                    <textarea class="textarea" rows="2" name="dxPrimary"></textarea>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="dxInitial">Dx. A. Inicial</label>
+                  <div class="control">
+                    <textarea class="textarea" rows="2" name="dxInitial"></textarea>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="background">Antecedentes</label>
+                  <div class="control">
+                    <textarea class="textarea" rows="2" name="background"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6 is-12-mobile">
+                <div class="field">
+                  <label class="label" for="surgicalHistory">Antecedentes Quirúrgicos</label>
+                  <div class="control">
+                    <textarea class="textarea" rows="2" name="surgicalHistory"></textarea>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="dxFinal">Dx. A. Final</label>
+                  <div class="control">
+                    <textarea class="textarea" rows="2" name="dxFinal"></textarea>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="txIntervencionism">Tx. Intervencionismo</label>
+                  <div class="control">
+                    <input class="input" type="text" name="txIntervencionism">
+                  </div>
+                </div>
               </div>
             </div>
             <div class="field">
