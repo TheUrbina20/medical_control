@@ -9,7 +9,7 @@ const dbFactory = (fileName) => Datastore.create({
 });
 
 const db = {
-  users: dbFactory('users.db')
+  patients: dbFactory('patients.db')
 };
 
 module.exports = db;
