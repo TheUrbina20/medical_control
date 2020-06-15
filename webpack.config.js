@@ -22,7 +22,17 @@ module.exports = {
             loader: 'sass-loader'
           }
         ]
-      }
+      },
+      {
+        test: /\.js/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [ '@babel/preset-env' ],
+            plugins: [ '@babel/plugin-proposal-class-properties' ]
+          }
+        }
+      },
     ]
   }
 };
