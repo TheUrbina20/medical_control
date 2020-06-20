@@ -6,7 +6,7 @@ const Patient = require('./src/Patient')
 
 function main() {
   new Window({
-    file: './public/sections/index.html',
+    file: './public/views/index.html',
   })
 
   ipcMain.on('create-patient', (event, data) => {

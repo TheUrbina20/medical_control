@@ -4,7 +4,7 @@ body * {
 
 hr {
   --margin: 10px;
-  background-color: #EAF1F9;
+  background-color: $divider-blue;
   margin: var(--margin);
   width: calc(100% - var(--margin) * 2);
 }
