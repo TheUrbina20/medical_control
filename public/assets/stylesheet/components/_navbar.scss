@@ -1,0 +1,11 @@
+.navbar-brand {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .main-action {
+    left: 15px;
+    position: absolute;
+  }
+}

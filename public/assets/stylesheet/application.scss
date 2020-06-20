@@ -1,5 +1,9 @@
 @import './utils/variables';
 @import 'bulma';
+@import './base/base';
+@import './base/spacing';
+@import './components/buttons';
+@import './components/icons';
 @import './components/inputs';
 @import './components/labels';
-@import './base/base';
+@import './components/navbar';
