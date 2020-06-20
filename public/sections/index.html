@@ -9,15 +9,15 @@
   <body>
     <div class="container">
       <div class="columns is-flex is-centered">
-        <div class="column is-11-mobile is-10-tablet is-9-desktop mt-4">
+        <div class="column is-11-mobile is-10-tablet is-9-desktop mt-1">
           <h1 class="title">Nuevo paciente</h1>
           <form id="createPatientForm" >
-            <div class="columns is-flex is-multiline">
-              <div class="column is-6 is-12-mobile">
+            <div class="columns is-flex is-multiline mb-0">
+              <div class="column is-6 is-12-mobile pb-0">
                 <div class="field">
                   <label class="label" for="fullName">Nombre</label>
                   <div class="control">
-                    <input class="input" type="text" placeholder="Nombre completo" name="fullName" required=required minlength="10" maxlength="70">
+                    <input id="fullName" class="input" type="text" placeholder="Nombre completo" name="fullName" required=required minlength="10" maxlength="70">
                   </div>
                 </div>
                 <div class="columns is-flex mb-0">
@@ -25,7 +25,7 @@
                     <div class="field">
                       <label class="label" for="expedient">Expediente</label>
                       <div class="control">
-                        <input class="input" type="text" name="expedient">
+                        <input id="expedient" class="input" type="text" name="expedient">
                       </div>
                     </div>
                   </div>
@@ -33,7 +33,7 @@
                     <div class="field">
                       <label class="label" for="admisionDate">Fecha ing.</label>
                       <div class="control">
-                        <input class="input" type="date" name="admisionDate" required=required>
+                        <input id="admisionDate" class="input" type="date" name="admisionDate" required=required>
                       </div>
                     </div>
                   </div>
@@ -43,7 +43,7 @@
                     <div class="field">
                       <label class="label" for="birthDate">F.Nacimiento</label>
                       <div class="control">
-                        <input class="input" type="date" name="birthDate">
+                        <input id="birthDate" class="input" type="date" name="birthDate">
                       </div>
                     </div>
                   </div>
@@ -51,25 +51,25 @@
                     <div class="field">
                       <label class="label" for="age">Edad</label>
                       <div class="control">
-                        <input class="input" type="number" name="age" required=required min="1" max="100">
+                        <input id="age" class="input" type="number" name="age" required=required min="1" max="100">
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="columns is-flex mb-0">
-                  <div class="column is-6">
+                  <div class="column is-6 pb-0">
                     <label class="label" for="sex">Sexo</label>
                     <div class="select">
-                      <select name="sex" required=required>
+                      <select id="sex" name="sex" required=required>
                         <option value="Femenino">Femenino</option>
                         <option value="Masculino">Masculino</option>
                       </select>
                     </div>
                   </div>
-                  <div class="column is-6">
+                  <div class="column is-6 pb-0">
                     <label class="label" for="marritalStatus">Estado civil</label>
                     <div class="select">
-                      <select name="marritalStatus">
+                      <select id="marritalStatus" name="marritalStatus">
                         <option value="N/A" disabled=disabled selected=selected>N/A</option>
                         <option value="Casado">Casado</option>
                         <option value="Divorciado">Divorciado</option>
@@ -81,17 +81,17 @@
                   </div>
                 </div>
               </div>
-              <div class="column is-6 is-12-mobile">
+              <div class="column is-6 is-12-mobile pb-0">
                 <div class="field">
                   <label class="label" for="city">Ciudad</label>
                   <div class="control">
-                    <input class="input" type="text" name="city" placeholder="Colima">
+                    <input id="city" class="input" type="text" name="city" placeholder="Colima">
                   </div>
                 </div>
                 <div class="field">
                   <label class="label" for="address">Domicilio</label>
                   <div class="control">
-                    <input class="input" type="text" name="address" placeholder="Calle Gabino Barreda 269, Centro, 28000" minlength="10" maxlength="100">
+                    <input id="address" class="input" type="text" name="address" placeholder="Calle Gabino Barreda 269, Centro, 28000" minlength="10" maxlength="100">
                   </div>
                 </div>
                 <div class="columns is-flex mb-0">
@@ -99,7 +99,7 @@
                     <div class="field">
                       <label class="label" for="phone">Tel.</label>
                       <div class="control">
-                        <input class="input" type="phone" name="phone" placeholder="(312)-314-6030" pattern="[0-9]{10}" maxlength="10" minlength="10">
+                        <input id="phone" class="input" type="phone" name="phone" placeholder="(312)-314-6030" pattern="[0-9]{10}" maxlength="10" minlength="10">
                       </div>
                     </div>
                   </div>
@@ -107,7 +107,7 @@
                     <div class="field">
                       <label class="label" for="cellPhone">Cel.</label>
                       <div class="control">
-                        <input class="input" type="phone" name="cellPhone" placeholder="(312)-314-6030" pattern="[0-9]{10}" maxlength="10" minlength="10">
+                        <input id="cellPhone" class="input" type="phone" name="cellPhone" placeholder="(312)-314-6030" pattern="[0-9]{10}" maxlength="10" minlength="10">
                       </div>
                     </div>
                   </div>
@@ -115,50 +115,255 @@
                 <div class="field">
                   <label class="label" for="activitites">Ocupaciones</label>
                   <div class="control">
-                    <input class="input" type="text" name="activitites" placeholder="Deporte, danza, lectura...">
+                    <input id="activitites" class="input" type="text" name="activitites" placeholder="Deporte, danza, lectura...">
                   </div>
                 </div>
               </div>
               <hr>
-              <div class="column is-6 is-12-mobile">
+              <div class="column is-6 is-12-mobile pt-0">
                 <div class="field">
                   <label class="label" for="dxPrimary">Dx. Primario</label>
                   <div class="control">
-                    <textarea class="textarea" rows="2" name="dxPrimary"></textarea>
+                    <textarea id="dxPrimary" class="textarea" rows="2" name="dxPrimary"></textarea>
                   </div>
                 </div>
                 <div class="field">
                   <label class="label" for="dxInitial">Dx. A. Inicial</label>
                   <div class="control">
-                    <textarea class="textarea" rows="2" name="dxInitial"></textarea>
+                    <textarea id="dxInitial" class="textarea" rows="2" name="dxInitial"></textarea>
                   </div>
                 </div>
                 <div class="field">
                   <label class="label" for="background">Antecedentes</label>
                   <div class="control">
-                    <textarea class="textarea" rows="2" name="background"></textarea>
+                    <textarea id="background" class="textarea" rows="2" name="background"></textarea>
                   </div>
                 </div>
               </div>
-              <div class="column is-6 is-12-mobile">
+              <div class="column is-6 is-12-mobile pt-0">
                 <div class="field">
                   <label class="label" for="surgicalHistory">Antecedentes Quirúrgicos</label>
                   <div class="control">
-                    <textarea class="textarea" rows="2" name="surgicalHistory"></textarea>
+                    <textarea id="surgicalHistory" class="textarea" rows="2" name="surgicalHistory"></textarea>
                   </div>
                 </div>
                 <div class="field">
                   <label class="label" for="dxFinal">Dx. A. Final</label>
                   <div class="control">
-                    <textarea class="textarea" rows="2" name="dxFinal"></textarea>
+                    <textarea id="dxFinal" class="textarea" rows="2" name="dxFinal"></textarea>
                   </div>
                 </div>
                 <div class="field">
                   <label class="label" for="txIntervencionism">Tx. Intervencionismo</label>
                   <div class="control">
-                    <input class="input" type="text" name="txIntervencionism">
+                    <input id="txIntervencionism" class="input" type="text" name="txIntervencionism">
                   </div>
                 </div>
+              </div>
+              <div class="column is-12 is-12-mobile" data-controller="tabs">
+                <div class="tabs is-small is-boxed">
+                  <ul>
+                    <li class="is-active" data-target="tabs.tab" data-action="click->tabs#updateSelectedTab" data-target-id="painCharacteristicContainer">
+                      <a>
+                        <span class="icon is-small"><i class="fas fa-info-circle" aria-hidden="true"></i></span>
+                        <span>Características del dolor</span>
+                      </a>
+                    </li>
+                    <li data-target="tabs.tab" data-action="click->tabs#updateSelectedTab" data-target-id="physicResearchContainer">
+                      <a>
+                        <span class="icon is-small"><i class="fas fa-search-plus" aria-hidden="true"></i></span>
+                        <span>Exploración física</span>
+                      </a>
+                    </li>
+                     <li data-target="tabs.tab" data-action="click->tabs#updateSelectedTab" data-target-id="labContainer">
+                      <a>
+                        <span class="icon is-small"><i class="fas fa-vials" aria-hidden="true"></i></span>
+                        <span>Laboratorio/Gabinete</span>
+                      </a>
+                    </li>
+                    <li data-target="tabs.tab" data-action="click->tabs#updateSelectedTab" data-target-id="theatmentsContainer">
+                      <a>
+                        <span class="icon is-small"><i class="fas fa-receipt" aria-hidden="true"></i></span>
+                        <span>Tratamientos</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="columns is-multiline">
+                  <div class="column is-12" id="painCharacteristicContainer" data-target="tabs.container">
+                  </div>
+                  <div class="column is-12 is-hidden" id="physicResearchContainer" data-target="tabs.container">
+                    <div class="columns is-flex is-multiline">
+                      <div class="column is-6-mobile is-4-tablet">
+                        <div class="columns is-flex">
+                          <div class="column is-6 pb-0">
+                            <label class="label" for="group">Gpo.</label>
+                            <div class="select">
+                              <select id="group" name="group">
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="column is-6 pb-0">
+                            <label class="label" for="rh">Rh.</label>
+                            <div class="select">
+                              <select id="rh" name="rh">
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="columns is-flex">
+                          <div class="column is-6-mobile is-6-tablet pb-0">
+                            <div class="field">
+                              <label class="label" for="fr">Fr</label>
+                              <div class="control">
+                                <input type="text" id="fr" class="input" name="fr"/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-6-mobile is-4-tablet">
+                        <div class="columns is-flex">
+                          <div class="column is-6 pb-0">
+                            <div class="field">
+                              <label class="label" for="weight">Peso</label>
+                              <div class="control">
+                                <input type="text" id="weight" class="input" name="weight" placeholder="74.8kg"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="column is-6 pb-0">
+                            <div class="field">
+                              <label class="label" for="size">Talla</label>
+                              <div class="control">
+                                <input type="text" id="size" class="input" name="size"/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-6-mobile is-4-tablet">
+                        <div class="columns is-flex">
+                          <div class="column is-6 pb-0">
+                            <div class="field">
+                              <label class="label" for="ta">TA</label>
+                              <div class="control">
+                                <input type="text" id="ta" class="input" name="ta"/>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="column is-6 pb-0">
+                            <div class="field">
+                              <label class="label" for="fc">Fc</label>
+                              <div class="control">
+                                <input type="text" id="fc" class="input" name="fc"/>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="columns is-flex is-multiline">
+                      <div class="column is-6-mobile is-6-tablet">
+                        <div class="field">
+                          <label class="label" for="generalInspection">Inspección general</label>
+                          <div class="control">
+                            <textarea id="generalInspection" class="textarea" rows="2" name="generalInspection"></textarea>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="label" for="head">Cabeza</label>
+                          <div class="control">
+                            <textarea id="head" class="textarea" rows="2" name="head"></textarea>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="label" for="neck">Cuello</label>
+                          <div class="control">
+                            <textarea id="neck" class="textarea" rows="2" name="neck"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-6-mobile is-6-tablet">
+                        <div class="field">
+                          <label class="label" for="abdomen">Abdomen</label>
+                          <div class="control">
+                            <textarea id="abdomen" class="textarea" rows="2" name="abdomen"></textarea>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="label" for="column">Columna</label>
+                          <div class="control">
+                            <textarea id="column" class="textarea" rows="2" name="column"></textarea>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="label" for="extremities">Extremidades</label>
+                          <div class="control">
+                            <textarea id="extremities" class="textarea" rows="2" name="extremities"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-6-mobile is-6-tablet">
+                        <div class="field">
+                          <label class="label" for="chest">Torax</label>
+                          <div class="control">
+                            <textarea id="chest" class="textarea" rows="2" name="chest"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-12 is-hidden" id="labContainer" data-target="tabs.container">
+                    <div class="columns is-flex is-multiline">
+                      <div class="column is-12-mobile is-6-tablet pb-0">
+                        <div class="field">
+                          <label class="label" for="lab">Laboratorio</label>
+                          <div class="control">
+                            <textarea id="lab" class="textarea" rows="2" name="lab"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-12-mobile is-6-tablet pb-0">
+                        <div class="field">
+                          <label class="label" for="cabinete">Gabinete</label>
+                          <div class="control">
+                            <textarea id="cabinete" class="textarea" rows="2" name="cabinete"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-12-mobile is-6-tablet">
+                        <div class="field">
+                          <label class="label" for="interconsultations">Interconsultas</label>
+                          <div class="control">
+                            <textarea id="interconsultations" class="textarea" rows="2" name="interconsultations"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-12-mobile is-6-tablet">
+                        <div class="field">
+                          <label class="label" for="requestesStudies">Estudios Solicitados</label>
+                          <div class="control">
+                            <textarea id="requestesStudies" class="textarea" rows="2" name="requestesStudies"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-12 is-hidden" id="theatmentsContainer" data-target="tabs.container">
+                    Tratamiento
+                  </div>
+                </div>
+              <!-- END OF TABS -->
               </div>
             </div>
             <div class="field">
