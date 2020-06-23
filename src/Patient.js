@@ -29,8 +29,15 @@ class Patient {
   }
 
   static async create(data) {
-    const patientData = await db.patients.insert(data)
-    return new Patient(patientData);
+    const patient = await db.patients.insert(data)
+    .then((patient) => {
+      return patient;
+    });
+    return patient;
+  }
+
+  static async recent(){
+    return await db.patients.find({}).sort({ updatedAt: 1}).limit(10)
   }
 }
 
