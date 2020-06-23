@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<head>
+  <html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../../dist/bundle.js"></script>
-    <script src="../sections/index.js" type="module"></script>
+    <script src="../views/newPatient.js" type="module"></script>
   </head>
   <body>
     <nav class="navbar" role="navigational" aria-label="main navigation">
@@ -20,10 +20,10 @@
 
     <div class="container">
       <div class="columns is-flex is-centered">
-        <div class="column is-11-mobile is-10-tablet is-9-desktop mt-1">
+        <div class="column is-11-mobile is-11-tablet mt-1">
           <form id="createPatientForm" >
             <div class="columns is-flex is-multiline mb-0">
-              <div class="column is-6 is-12-mobile pb-0">
+              <div class="column is-4 is-12-mobile pb-0">
                 <div class="field">
                   <label class="label" for="fullName">Nombre</label>
                   <div class="control">
@@ -35,7 +35,7 @@
                     <div class="field">
                       <label class="label" for="expedient">Expediente</label>
                       <div class="control">
-                        <input id="expedient" class="input" type="text" name="expedient">
+                        <input id="expedient" class="input" type="number" min="0" name="expedient">
                       </div>
                     </div>
                   </div>
@@ -48,6 +48,32 @@
                     </div>
                   </div>
                 </div>
+                <div class="columns is-flex mb-0">
+                  <div class="column is-6">
+                    <label class="label" for="sex">Sexo</label>
+                    <div class="select">
+                      <select id="sex" name="sex" required=required>
+                        <option value="Femenino">Femenino</option>
+                        <option value="Masculino">Masculino</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="column is-6">
+                    <label class="label" for="marritalStatus">Estado civil</label>
+                    <div class="select">
+                      <select id="marritalStatus" name="marritalStatus">
+                        <option value="N/A" disabled=disabled selected=selected>N/A</option>
+                        <option value="Casado(a)">Casado(a)</option>
+                        <option value="Divorciado(a)">Divorciado(a)</option>
+                        <option value="Sotero(a)">Soltero(a)</option>
+                        <option value="Unión libre">Unión libre</option>
+                        <option value="Viudo(a)">Viudo(a)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-4 is-12-mobile pb-0">
                 <div class="columns is-flex mb-0">
                   <div class="column is-6">
                     <div class="field">
@@ -66,32 +92,22 @@
                     </div>
                   </div>
                 </div>
-                <div class="columns is-flex mb-0">
-                  <div class="column is-6 pb-0">
-                    <label class="label" for="sex">Sexo</label>
-                    <div class="select">
-                      <select id="sex" name="sex" required=required>
-                        <option value="Femenino">Femenino</option>
-                        <option value="Masculino">Masculino</option>
-                      </select>
-                    </div>
+
+                <div class="field">
+                  <label class="label" for="activitites">Ocupaciones</label>
+                  <div class="control">
+                    <input id="activitites" class="input" type="text" name="activitites" placeholder="Deporte, danza, lectura...">
                   </div>
-                  <div class="column is-6 pb-0">
-                    <label class="label" for="marritalStatus">Estado civil</label>
-                    <div class="select">
-                      <select id="marritalStatus" name="marritalStatus">
-                        <option value="N/A" disabled=disabled selected=selected>N/A</option>
-                        <option value="Casado">Casado</option>
-                        <option value="Divorciado">Divorciado</option>
-                        <option value="Sotero">Soltero</option>
-                        <option value="Unión libre">Unión libre</option>
-                        <option value="Viudo">Viudo</option>
-                      </select>
-                    </div>
+                </div>
+                <div class="field">
+                  <label class="label" for="reference">Referencia</label>
+                  <div class="control">
+                    <input id="reference" class="input" type="text" name="referencia" placeholder="Nombre de quien referenció">
                   </div>
                 </div>
               </div>
-              <div class="column is-6 is-12-mobile pb-0">
+
+              <div class="column is-4 is-12-mobile pb-0">
                 <div class="field">
                   <label class="label" for="city">Ciudad</label>
                   <div class="control">
@@ -122,25 +138,13 @@
                     </div>
                   </div>
                 </div>
-                <div class="field">
-                  <label class="label" for="activitites">Ocupaciones</label>
-                  <div class="control">
-                    <input id="activitites" class="input" type="text" name="activitites" placeholder="Deporte, danza, lectura...">
-                  </div>
-                </div>
               </div>
               <hr>
-              <div class="column is-6 is-12-mobile pt-0">
+              <div class="column is-4 is-12-mobile pt-0">
                 <div class="field">
                   <label class="label" for="dxPrimary">Dx. Primario</label>
                   <div class="control">
                     <textarea id="dxPrimary" class="textarea" rows="2" name="dxPrimary"></textarea>
-                  </div>
-                </div>
-                <div class="field">
-                  <label class="label" for="dxInitial">Dx. A. Inicial</label>
-                  <div class="control">
-                    <textarea id="dxInitial" class="textarea" rows="2" name="dxInitial"></textarea>
                   </div>
                 </div>
                 <div class="field">
@@ -150,13 +154,21 @@
                   </div>
                 </div>
               </div>
-              <div class="column is-6 is-12-mobile pt-0">
+              <div class="column is-4 is-12-mobile pt-0">
+                <div class="field">
+                  <label class="label" for="dxInitial">Dx. A. Inicial</label>
+                  <div class="control">
+                    <textarea id="dxInitial" class="textarea" rows="2" name="dxInitial"></textarea>
+                  </div>
+                </div>
                 <div class="field">
                   <label class="label" for="surgicalHistory">Antecedentes Quirúrgicos</label>
                   <div class="control">
                     <textarea id="surgicalHistory" class="textarea" rows="2" name="surgicalHistory"></textarea>
                   </div>
                 </div>
+              </div>
+              <div class="column is-4 is-12-mobile pt-0">
                 <div class="field">
                   <label class="label" for="dxFinal">Dx. A. Final</label>
                   <div class="control">
@@ -166,7 +178,7 @@
                 <div class="field">
                   <label class="label" for="txIntervencionism">Tx. Intervencionismo</label>
                   <div class="control">
-                    <input id="txIntervencionism" class="input" type="text" name="txIntervencionism">
+                    <textarea id="txIntervencionism" class="textarea" rows="2" name="txIntervencionism"></textarea>
                   </div>
                 </div>
               </div>
@@ -199,8 +211,113 @@
                     </li>
                   </ul>
                 </div>
+                <!-- START OF TABS -->
                 <div class="columns is-multiline">
                   <div class="column is-12" id="painCharacteristicContainer" data-target="tabs.container">
+                    <div class="columns is-multiline is-flex">
+                      <div class="column is-4 is-12-mobile">
+                        <div class="field">
+                          <label class="label" for="fr">Tipo</label>
+                          <div class="control">
+                            <input type="text" id="fr" class="input" name="fr"/>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="label" for="fr">Duración</label>
+                          <div class="control">
+                            <input type="text" id="fr" class="input" name="fr"/>
+                          </div>
+                        </div>
+
+                        <div class="field">
+                          <label class="label" for="fr">Edo. Actual</label>
+                          <div class="control">
+                            <input type="text" id="fr" class="input" name="fr"/>
+                          </div>
+                        </div>
+
+                        <div class="columns is-flex">
+                          <div class="column is-6 pb-0">
+                            <label class="label" for="eva">EVA</label>
+                            <div class="select">
+                              <select id="eva" name="marritalStatus">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="column is-6 pb-0">
+                            <label class="label" for="evara">EVARA</label>
+                            <div class="select">
+                              <select id="evara" name="evara">
+                                <option value="Leve">Leve</option>
+                                <option value="Moderado">Moderado</option>
+                                <option value="Fuerte">Fuerte</option>
+                                <option value="Muy fuerte">Muy fuerte</option>
+                                <option value="Insoportable">Insoportable</option>
+                              </select>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-4 is-12-mobile">
+                        <div class="field">
+                          <label class="label" for="fr">Localización</label>
+                          <div class="control">
+                            <input type="text" id="fr" class="input" name="fr"/>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="label" for="lastTime">Última vez</label>
+                          <div class="control">
+                            <input type="text" id="lastTime" class="input" name="lastTime"/>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="label" for="alergies">Alergias</label>
+                          <div class="control">
+                            <textarea id="alergies" class="textarea" rows="2" name="alergies"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-4 is-12-mobile">
+                        <div class="field">
+                          <label class="label" for="fr">Evolución</label>
+                          <div class="control">
+                            <input type="text" id="fr" class="input" name="fr"/>
+                          </div>
+                        </div>
+
+                        <div class="field">
+                          <label class="label" for="fr">Inicio</label>
+                          <div class="control">
+                            <input type="text" id="fr" class="input" name="fr"/>
+                          </div>
+                        </div>
+                        <div class="field">
+                          <label class="label" for="irradiations">Irradiaciones</label>
+                          <div class="control">
+                            <textarea id="irradiations" class="textarea" rows="2" name="irradiations"></textarea>
+                          </div>
+                        </div>
+
+                        <div class="field">
+                          <label class="label" for="previousTx">Tx Previo</label>
+                          <div class="control">
+                            <textarea id="previousTx" class="textarea" rows="2" name="previousTx"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="column is-12 is-hidden" id="physicResearchContainer" data-target="tabs.container">
                     <div class="columns is-flex is-multiline">
@@ -210,14 +327,10 @@
                             <label class="label" for="group">Gpo.</label>
                             <div class="select">
                               <select id="group" name="group">
-                                <option value="A+">A+</option>
-                                <option value="A-">A-</option>
-                                <option value="B+">B+</option>
-                                <option value="B-">B-</option>
-                                <option value="AB+">AB+</option>
-                                <option value="AB-">AB-</option>
-                                <option value="O+">O+</option>
-                                <option value="O-">O-</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="AB">AB</option>
+                                <option value="O">O</option>
                               </select>
                             </div>
                           </div>
@@ -225,6 +338,8 @@
                             <label class="label" for="rh">Rh.</label>
                             <div class="select">
                               <select id="rh" name="rh">
+                                <option value="+">+</option>
+                                <option value="-">-</option>
                               </select>
                             </div>
                           </div>
@@ -234,7 +349,7 @@
                             <div class="field">
                               <label class="label" for="fr">Fr</label>
                               <div class="control">
-                                <input type="text" id="fr" class="input" name="fr"/>
+                                <input type="number" min="0" id="fr" class="input" name="fr"/ placeholder="resp./min.">
                               </div>
                             </div>
                           </div>
@@ -246,7 +361,7 @@
                             <div class="field">
                               <label class="label" for="weight">Peso</label>
                               <div class="control">
-                                <input type="text" id="weight" class="input" name="weight" placeholder="74.8kg"/>
+                                <input type="number" min="0" id="weight" class="input" name="weight" placeholder="74.8kg"/>
                               </div>
                             </div>
                           </div>
@@ -266,7 +381,7 @@
                             <div class="field">
                               <label class="label" for="ta">TA</label>
                               <div class="control">
-                                <input type="text" id="ta" class="input" name="ta"/>
+                                <input type="number" min="0" id="ta" class="input" name="ta" placeholder="120 mmHg"/>
                               </div>
                             </div>
                           </div>
@@ -274,7 +389,7 @@
                             <div class="field">
                               <label class="label" for="fc">Fc</label>
                               <div class="control">
-                                <input type="text" id="fc" class="input" name="fc"/>
+                                <input type="number" min="0" id="fc" class="input" name="fc" placeholder="lat./min."/>
                               </div>
                             </div>
                           </div>
@@ -283,17 +398,11 @@
                     </div>
                     <hr>
                     <div class="columns is-flex is-multiline">
-                      <div class="column is-6-mobile is-6-tablet">
+                      <div class="column is-6-mobile is-4">
                         <div class="field">
                           <label class="label" for="generalInspection">Inspección general</label>
                           <div class="control">
                             <textarea id="generalInspection" class="textarea" rows="2" name="generalInspection"></textarea>
-                          </div>
-                        </div>
-                        <div class="field">
-                          <label class="label" for="head">Cabeza</label>
-                          <div class="control">
-                            <textarea id="head" class="textarea" rows="2" name="head"></textarea>
                           </div>
                         </div>
                         <div class="field">
@@ -302,8 +411,30 @@
                             <textarea id="neck" class="textarea" rows="2" name="neck"></textarea>
                           </div>
                         </div>
+                        <div class="field">
+                          <label class="label" for="chest">Torax</label>
+                          <div class="control">
+                            <textarea id="chest" class="textarea" rows="2" name="chest"></textarea>
+                          </div>
+                        </div>
                       </div>
-                      <div class="column is-6-mobile is-6-tablet">
+                      <div class="column is-6-mobile is-4">
+
+                        <div class="field">
+                          <label class="label" for="head">Cabeza</label>
+                          <div class="control">
+                            <textarea id="head" class="textarea" rows="2" name="head"></textarea>
+                          </div>
+                        </div>
+
+                        <div class="field">
+                          <label class="label" for="extremities">Extremidades</label>
+                          <div class="control">
+                            <textarea id="extremities" class="textarea" rows="2" name="extremities"></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="column is-6-mobile is-4">
                         <div class="field">
                           <label class="label" for="abdomen">Abdomen</label>
                           <div class="control">
@@ -314,20 +445,6 @@
                           <label class="label" for="column">Columna</label>
                           <div class="control">
                             <textarea id="column" class="textarea" rows="2" name="column"></textarea>
-                          </div>
-                        </div>
-                        <div class="field">
-                          <label class="label" for="extremities">Extremidades</label>
-                          <div class="control">
-                            <textarea id="extremities" class="textarea" rows="2" name="extremities"></textarea>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="column is-6-mobile is-6-tablet">
-                        <div class="field">
-                          <label class="label" for="chest">Torax</label>
-                          <div class="control">
-                            <textarea id="chest" class="textarea" rows="2" name="chest"></textarea>
                           </div>
                         </div>
                       </div>
