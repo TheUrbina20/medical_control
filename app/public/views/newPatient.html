@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="../../dist/bundle.js"></script>
-    <script src="../views/newPatient.js" type="module"></script>
+    <script src="./newPatient.js" type="module"></script>
   </head>
   <body>
     <nav class="navbar" role="navigational" aria-label="main navigation">
@@ -35,7 +35,7 @@
                     <div class="field">
                       <label class="label" for="expedient">Expediente</label>
                       <div class="control">
-                        <input id="expedient" class="input" type="number" min="0" name="expedient">
+                        <input id="expedient" class="input" type="number" min="0" name="expedient" placeholder="#">
                       </div>
                     </div>
                   </div>
@@ -87,7 +87,7 @@
                     <div class="field">
                       <label class="label" for="age">Edad</label>
                       <div class="control">
-                        <input id="age" class="input" type="number" name="age" required=required min="1" max="100">
+                        <input id="age" class="input" type="number" name="age" required=required min="1" max="100" placeholder="34 años">
                       </div>
                     </div>
                   </div>
@@ -495,7 +495,7 @@
             </div>
             <div class="field">
               <button class="button is-success" type="submit">
-                Create
+                Registrar paciente
               </button>
             </div>
           </form>
