@@ -36,8 +36,15 @@ class Patient {
     return patient;
   }
 
-  static async recent(){
+  static async recent() {
     return await db.patients.find({}).sort({ updatedAt: 1}).limit(10)
+  }
+
+  static async exists(patientName) {
+    const patient = await db.patients.find({ fullName: patientName }, (err, patient) => {
+      return patient.lenght;
+    });
+    return patient;
   }
 }
 
