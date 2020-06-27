@@ -41,7 +41,6 @@ function main() {
   ipcMain.on('check-if-patient-exists', (event, data) => {
     Patien.exists(data)
     .then((response) =>{
-      console.log(response)
       event.reply('patient-exists', response)
     });
   });
