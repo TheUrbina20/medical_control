@@ -11,10 +11,10 @@ function patientUpdate(patient) {
 function buildPatientsRow(patient) {
   return '<div class="columns is-12 is-flex">'
           +'<div class="column">'
-            + `<a href="/patient/${patient._id}">${patient.fullName}</a>`
+            + `<a href="/patient/patientId=${patient._id}">${patient.fullName}</a>`
           + '</div>'
           +'<div class="column">'
-            + `<div class="has-text-right is-size-6">${patientUpdate(patient)}</div>`
+            + `<div class="has-text-right is-size-6"</div>`
           + '</div>'
         +'</div>';
 }
@@ -25,6 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const recentPatientsContainer = document.getElementById('recentPatientsContainer');
     patientsData.forEach((patient) => {
       recentPatientsContainer.insertAdjacentHTML('beforeEnd', buildPatientsRow(patient))
-    })
+    });
   });
 });

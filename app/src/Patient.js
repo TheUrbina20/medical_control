@@ -41,10 +41,8 @@ class Patient {
   }
 
   static async exists(patientName) {
-    const patient = await db.patients.find({ fullName: patientName }, (err, patient) => {
-      return patient.lenght;
-    });
-    return patient;
+    const patients = await db.patients.find({ fullName: patientName });
+    return patients.length;
   }
 }
 

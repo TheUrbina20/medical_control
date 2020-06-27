@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./dist/bundle.js"></script>
+    <script src="./assets/javascript/index.js" type="module"></script>
+  </head>
+  <body>
+    <nav class="navbar" role="navigational" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a href="/" class="main-action">
+          <span class="icon is-medium">
+            <i class="fas fa-home fa-2x"></i>
+          </span>
+        </a>
+        <h1 class="title">Patientes recientes</h1>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="columns is-flex is-centered has-items-centered has-direction-column mt-5">
+        <div class="column is-12-mobile is-6-tablet is-8-widescreen box" id="recentPatientsContainer">
+        </div>
+        <div class="column is-12-mobile is-6-tablet is-8-widescreen">
+          <a class="button is-success" href="/patients/new">
+            Nuevo paciente
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
