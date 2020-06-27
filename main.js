@@ -1,12 +1,13 @@
 'use strict';
-
+require('./app')
 const { app, ipcMain, Notification } = require('electron')
 const Window = require('./app/src/Window');
 const Patient = require('./app/src/Patient')
 
+
 function main() {
   const mainWindow = new Window({
-    file: './app/public/views/index.html',
+    path: 'http://localhost:3000/',
   })
   mainWindow.setFullScreen(true);
 
@@ -25,7 +26,7 @@ function main() {
             title: 'Paciente registrado',
             body: 'Los datos han sido correctamente registrados.'
           }).show();
-          mainWindow.loadURL(`file:${__dirname}/public/views/index.html`)
+          mainWindow.loadURL('http://localhost:3000/')
         });
       }
     })

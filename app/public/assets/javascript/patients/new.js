@@ -1,7 +1,7 @@
 'use strict';
 
 const { ipcRenderer } = require('electron');
-import formToJSON from '../assets/javascript/utils.js'
+import formToJSON from '../utils.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('createPatientForm').addEventListener('submit', (event) => {
